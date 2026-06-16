@@ -1,0 +1,212 @@
+.field-container {
+  background-color: #f8fafc;
+  min-height: 100vh;
+  padding-bottom: 48px;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+/* 1. THANH TÌM KIẾM & BỘ LỌC */
+.filter-bar {
+  background-color: #0f172a;
+  color: white;
+  padding: 24px 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.filter-wrapper {
+  max-w-7xl: 1200px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.filter-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #38bdf8;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.filter-input, .filter-select {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: white;
+  box-sizing: border-box;
+}
+
+.filter-button {
+  width: 100%;
+  background-color: #2563eb;
+  color: white;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.filter-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* 2. DANH SÁCH SÂN BÓNG */
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.result-count {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+.result-count-bold {
+  font-weight: bold;
+  color: #1e293b;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Thẻ card sân bóng */
+.field-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image-box {
+  position: relative;
+  height: 176px;
+  background-color: #cbd5e1;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #2563eb;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.card-info {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.field-name {
+  font-weight: bold;
+  font-size: 16px;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+  cursor: pointer;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.field-address {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-meta {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field-rating {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f59e0b;
+}
+
+.field-price {
+  font-size: 14px;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.btn-detail {
+  width: 100%;
+  margin-top: 16px;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 500;
+  padding: 8px 0;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.btn-detail:hover {
+  background-color: #1d4ed8;
+}
+
+/* 3. PHÂN TRANG */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.btn-page {
+  padding: 6px 12px;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-page.active {
+  background-color: #2563eb;
+  color: white;
+  border: 1px solid #2563eb;
+}
