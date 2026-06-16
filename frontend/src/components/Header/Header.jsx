@@ -1,24 +1,64 @@
-import './Header.css';
-
-function Header() {
+export default function Header() {
   return (
-    <>
-    {/* Header */}  
-      <header className="header">
-        <div className="logo">Aemeath</div>
-        <nav className="nav">
-          <a href="#">Nam</a>
-          <a href="#">Nữ</a>
-          <a href="#">Phụ kiện</a>
-          <a href="#">Bộ sưu tập</a>
-        </nav>
-        <div className="header-icons">
-          <a href="#">Tìm kiếm</a>
-          <a href="#">Giỏ hàng (0)</a>
+    <header style={styles.header}>
+      <div style={styles.headerInner}>
+        <div style={styles.logo}>
+          <i className="ti ti-basket"></i> Passion Team
         </div>
-      </header>
-      </>
+        <nav style={styles.navLinks}>
+          <a href="#" style={styles.link}>Trang chủ</a>
+          <a href="#" style={styles.link}>Sân bóng</a>
+          <a href="#" style={styles.link}>Đặt lịch của tôi</a>
+          <a href="#" style={styles.link}>Liên hệ</a>
+        </nav>
+        <button style={styles.headerCta}>Đăng nhập</button>
+      </div>
+    </header>
   );
 }
 
-export default Header;
+const styles = {
+  header: {
+    background: '#ffffff',
+    borderBottom: '1px solid #e5e7eb',
+    position: 'sticky',
+    top: 0,
+    zIndex: 50,
+  },
+  headerInner: {
+    maxWidth: '1100px',
+    margin: '0 auto',
+    padding: '14px 20px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  logo: {
+    fontSize: '20px',
+    fontWeight: 700,
+    color: '#ea580c',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+  },
+  navLinks: {
+    display: 'flex',
+    gap: '28px',
+    fontSize: '15px',
+    color: '#6b7280',
+  },
+  link: {
+    textDecoration: 'none',
+    color: 'inherit',
+  },
+  headerCta: {
+    background: '#ea580c',
+    color: '#fff',
+    border: 'none',
+    padding: '10px 20px',
+    borderRadius: '8px',
+    fontSize: '14px',
+    fontWeight: 600,
+    cursor: 'pointer',
+  },
+};
