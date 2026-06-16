@@ -87,6 +87,7 @@ function HomeProduct() {
           <p>BỘ SƯU TẬP MỚI</p>
           <h1>SỰ TỐI GIẢN <br /> LÀ ĐỈNH CAO CỦA TINH TẾ</h1>
           <a href="" className="btn-primary">Xem bộ sưu tập</a>
+          <Link to="/product/1" className="btn-primary" style={{ marginLeft: '12px', background: '#ea580c' }}>Xem chi tiết sân bóng rổ</Link>
         </div>
       </section>
 
