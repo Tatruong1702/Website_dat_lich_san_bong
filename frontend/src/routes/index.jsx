@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     path: "/san-bong",
     element: <FieldList />,
   },
-        path: "/product/:id",
+      {  path: "/product/:id",
         element: <ProductDetail />,
     },
 ]);
