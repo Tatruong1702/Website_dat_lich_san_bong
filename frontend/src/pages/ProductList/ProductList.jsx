@@ -27,7 +27,7 @@ function ProductList() {
         <main className="container plp-container">
             <aside className="filters">
                 <div className="filter-group">
-                    <h4>Danh mục sản phẩm</h4>
+                    <h4>Loại sân</h4>
                     <ul>
                         <li>
                             <input type="checkbox" id="cat1" />
@@ -35,31 +35,39 @@ function ProductList() {
                         </li>
                         <li>
                             <input type="checkbox" id="cat2" />
-                            <label htmlFor="cat2">Áo sơ mi</label>
+                            <label htmlFor="cat2">Sân 3x3</label>
                         </li>
                         <li>
                             <input type="checkbox" id="cat3" />
-                            <label htmlFor="cat3">Quần & Shorts</label>
+                            <label htmlFor="cat3">Sân 5x5</label>
                         </li>
                         <li>
                             <input type="checkbox" id="cat4" />
-                            <label htmlFor="cat4">Áo khoác</label>
+                            <label htmlFor="cat4">Sân tiêu chuẩn</label>
                         </li>
                     </ul>
                 </div>
 
                 <div className="filter-group">
-                    <h4>Kích cỡ</h4>
-                    <div className="size-grid">
-                        <button type="button">S</button>
-                        <button type="button">M</button>
-                        <button type="button">L</button>
-                        <button type="button">XL</button>
-                    </div>
+                    <h4>Vị trí</h4>
+                    <ul>
+                        <li>
+                            <input type="checkbox" id="loc1" />
+                            <label htmlFor="loc1">Trong nhà</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="loc2" />
+                            <label htmlFor="loc2">Ngoài trời</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="loc3" />
+                            <label htmlFor="loc3">Cả hai</label>
+                        </li>
+                    </ul>
                 </div>
 
                 <div className="filter-group">
-                    <h4>Khoảng giá</h4>
+                    <h4>Khoảng giá (1 giờ)</h4>
                     <input type="range" min="0" max="5000000" className="price-slider" />
                     <div className="price-labels">
                         <span>0đ</span>
