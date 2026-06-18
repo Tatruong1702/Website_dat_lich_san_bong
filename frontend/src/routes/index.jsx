@@ -7,6 +7,7 @@ import FieldList from "../pages/FieldList/FieldList";
 import ProductDetail from "../pages/ProductDetail/ProductDetail";
 import AdminDashboard from "../pages/Admin/AdminDashboard";
 import AdminCategories from "../pages/Admin/AdminCategories";
+import AdminFields from "../pages/Admin/AdminFields";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,10 @@ const router = createBrowserRouter([
         index: true,
         element: <AdminDashboard />,
       },
-     
+      {
+        path: "/admin/fields",
+        element: <AdminFields />,
+      },
       {
         path: "/admin/categories",
         element: <AdminCategories />,
