@@ -8,6 +8,8 @@ import ProductDetail from "../pages/ProductDetail/ProductDetail";
 import AdminDashboard from "../pages/Admin/AdminDashboard";
 import AdminCategories from "../pages/Admin/AdminCategories";
 import AdminFields from "../pages/Admin/AdminFields";
+import CheckoutPage from "../pages/CheckoutPage/CheckoutPage";
+import PaymentCallbackPage from "../pages/PaymentCallbackPage/PaymentCallbackPage";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
         path: "/product/:id",
         element: <ProductDetail />,
       },
+      {
+        path: "/checkout",
+        element: <CheckoutPage />,
+      },
+      {
+        path: "/checkout/callback",
+        element: <PaymentCallbackPage />,
+      },
     ],
   },
   {
@@ -41,11 +51,11 @@ const router = createBrowserRouter([
         element: <AdminDashboard />,
       },
       {
-        path: "/admin/fields",
+        path: "fields", 
         element: <AdminFields />,
       },
       {
-        path: "/admin/categories",
+        path: "categories", 
         element: <AdminCategories />,
       },
     ],
