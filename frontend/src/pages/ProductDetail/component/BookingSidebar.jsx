@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../ProductDetail.css';
 
 const PRICE_PER_HOUR = 300000;
@@ -10,33 +11,28 @@ const TIME_SLOTS = [
 ];
 
 const DISABLED_SLOTS = ['10:00', '18:00'];
-
 const QUANTITY_OPTIONS = [1, 2, 3];
 
 function BookingSidebar() {
+  const navigate = useNavigate();
+
   const [date, setDate] = useState('2026-06-12');
   const [selectedSlot, setSelectedSlot] = useState('08:00');
   const [quantity, setQuantity] = useState(1);
 
   const total = PRICE_PER_HOUR * quantity + SERVICE_FEE;
 
-  const handleDateChange = (e) => {
-    setDate(e.target.value);
-  };
-
-  const handleSlotClick = (slot) => {
-    if (DISABLED_SLOTS.includes(slot)) return;
-    setSelectedSlot(slot);
-  };
-
-  const handleQuantityChange = (e) => {
-    setQuantity(Number(e.target.value));
-  };
-
   const handleBook = () => {
-    alert(
-      `Đặt sân thành công!\nNgày: ${date}\nGiờ: ${selectedSlot}\nSố giờ: ${quantity}\nTổng: ${total.toLocaleString('vi-VN')}đ`
-    );
+    navigate("/checkout", {
+      state: {
+        date,
+        slot: selectedSlot,
+        quantity,
+        pricePerHour: PRICE_PER_HOUR,
+        serviceFee: SERVICE_FEE,
+        total
+      }
+    });
   };
 
   return (
@@ -47,7 +43,7 @@ function BookingSidebar() {
 
       <div className="form-group">
         <label>Chọn ngày</label>
-        <input type="date" value={date} onChange={handleDateChange} />
+        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
       </div>
 
       <div className="form-group">
@@ -57,15 +53,11 @@ function BookingSidebar() {
             const isDisabled = DISABLED_SLOTS.includes(slot);
             const isSelected = slot === selectedSlot;
 
-            let className = 'slot';
-            if (isDisabled) className += ' disabled';
-            if (isSelected && !isDisabled) className += ' selected';
-
             return (
               <div
                 key={slot}
-                className={className}
-                onClick={() => handleSlotClick(slot)}
+                className={`slot ${isDisabled ? 'disabled' : ''} ${isSelected ? 'selected' : ''}`}
+                onClick={() => !isDisabled && setSelectedSlot(slot)}
               >
                 {slot}
               </div>
@@ -76,7 +68,7 @@ function BookingSidebar() {
 
       <div className="form-group">
         <label>Số lượng giờ</label>
-        <select value={quantity} onChange={handleQuantityChange}>
+        <select value={quantity} onChange={(e) => setQuantity(Number(e.target.value))}>
           {QUANTITY_OPTIONS.map((q) => (
             <option key={q} value={q}>
               {q} giờ
@@ -101,6 +93,7 @@ function BookingSidebar() {
       <button className="book-btn" onClick={handleBook}>
         Đặt sân ngay
       </button>
+
       <div className="note">Bạn sẽ không bị trừ tiền ở bước này</div>
     </div>
   );
